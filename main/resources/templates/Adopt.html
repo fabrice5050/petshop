@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .card-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            width: 200px;
+            height: 200px;
+        }
+
+        .card-content {
+            padding: 5px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .card-category, .card-price {
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        .buy-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .buy-button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+
+</head>
+<body>
+<header>
+
+
+        <nav>
+            <ul>
+                <li><a th:href="@{/v}">Home</a></li>
+                <li><a th:href="@{/adopt}">Adopt</a></li>
+                <li><a th:href="@{/logout}">Log out</a></li>
+
+
+            </ul>
+        </nav>
+
+</header>
+<main>
+<div class="card" th:each="pets : ${pets}">
+    <img class="card-image"  th:src="${pets.photo}" >
+    <div class="card-content">
+        <h2 class="card-title">Product Name</h2>
+        <p th:text="${pets.category}">Product Category</p>
+        <p th:text="${pets.Gender}">$</p>
+        <p th:text="${pets.age}">$</p>
+        <p th:text="${pets.price}">$</p>
+
+        <a th:href="@{/addCheckout}">
+            <button class="buy-button">Buy</button>
+        </a>
+    </div>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkouts</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+    </style>
+</head>
+<header>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/v}">Home</a></li>
+            <li><a th:href="@{/add}">Add Pet</a></li>
+            <li><a th:href="@{/view}">view Pet</a></li>
+            <li><a th:href="@{/checkouts}">CheckOut Pets</a></li>
+
+            <li><a th:href="@{/exportCsv}">Export Excel</a></li>
+            <li><a th:href="@{/exportPdf}">Export PDF</a></li>
+            <li><a th:href="@{/logout}">Log out</a></li>
+
+
+        </ul>
+    </nav>
+</header>
+<body>
+<div class="container">
+    <h1 class="text-center">List of Checkouts</h1>
+    <div class="table-container">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Payment Method</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="checkout : ${checkouts}">
+                <td th:text="${checkout.id}">1</td>
+                <td th:text="${checkout.name}">Name</td>
+                <td th:text="${checkout.address}">Address</td>
+                <td th:text="${checkout.paymentMethod}">Payment Method</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Include Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

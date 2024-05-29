@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Shop</title>
+    <style>
+        * Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background-image: url('/images/banner.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #666;
+        }
+
+        button {
+            padding: 10px 30px;
+            background-color: #ff9800;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f57c00;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .background-image {
+
+            background-size: cover;
+            background-position: center center;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .button-gallery {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-gallery:hover {
+            background-color: #3e8e41;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            flex: 0 0 calc(33.33% - 20px);
+            margin: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .gallery-item-title {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex-basis: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                flex-basis: 100%;
+            }
+        }
+        main {
+            margin-top: 350px;
+            margin-bottom: 150px;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+<body >
+<header>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/v}">Home</a></li>
+            <li><a th:href="@{/adopt}">Adopt</a></li>
+            <li><a th:href="@{/logout}">Log out</a></li>
+
+
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2>Customer Dashboard</h2>
+
+    <p> Welcome: <span sec:authentication="name"></span></p>
+</main>
+
+
+
+
+<footer>
+    <p>&copy; 2023 Pet Shop. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You for Choosing Our Pet Shop!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 24px;
+    }
+
+    p {
+      color: #666;
+      font-size: 16px;
+    }
+
+    .logo {
+      margin-bottom: 20px;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+      color: #ff9800;
+    }
+  </style>
+</head>
+<header>
+  <nav>
+    <ul>
+      <li><a th:href="@{/v}">Home</a></li>
+      <li><a th:href="@{/adopt}">Adopt</a></li>
+      <li><a th:href="@{/logout}">Log out</a></li>
+
+
+    </ul>
+  </nav>
+</header>
+
+<body>
+<img class="logo" src="/images/dog-img.png" alt="Pet Shop Logo">
+<h1>Thank You for Choosing Our Pet Shop!</h1>
+<p>Dear valued customer,</p>
+<p>We would like to extend our heartfelt thanks for purchasing a pet from our pet shop. We're thrilled that you've chosen us to help you find a new furry friend!</p>
+<p>We hope your new pet brings you joy, companionship, and countless unforgettable moments. They truly make our lives brighter!</p>
+<p>If you have any questions or need guidance on caring for your pet, feel free to reach out to our knowledgeable staff. We're here to provide assistance and support.</p>
+<p>Thank you once again for your trust in our pet shop. We genuinely appreciate your business!</p>
+<p>Best regards,</p>
+
+</body>
+</html>
